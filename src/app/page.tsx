@@ -190,7 +190,9 @@ const handleCardClick = () => {
 </Card>
    <Card className='hover:shadow-lg transition-all duration-300 transform hover:scale-105'>
   <CardHeader>
-    <CardTitle>Men's Jeans</CardTitle>
+    <CardTitle>{"Men's Jeans"}</CardTitle>
+
+
     <CardDescription>Imported form the Germany.Made up cutton, with the plasure experience.</CardDescription>
     <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
