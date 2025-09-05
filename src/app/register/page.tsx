@@ -25,21 +25,29 @@ export default function RegisterPage() {
     setError(null); 
     setIsSubmitting(true);
 
-    try {
-      await register(username, password, email);
-      toast( 'Sucesss',{
-        description: 'You can now log in with your new account.',
-      });
-     
-    } catch (err: any) {
-      setError(err.message || 'An unexpected error occurred during registration.');
-      toast('Error', {
-        
-        description: err.message || 'Please try again.',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+   try {
+  await register(username, password, email);
+  toast('Success', {
+    description: 'You can now log in with your new account.',
+  });
+} catch (err: unknown) {
+  let message = 'An unexpected error occurred during registration.';
+  
+  if (err instanceof Error) {
+    message = err.message;
+  } else if (typeof err === 'object' && err !== null && 'response' in err) {
+    
+    message = err.response?.data?.detail || message;
+  }
+
+  setError(message);
+  toast('Error', {
+    description: message,
+  });
+} finally {
+  setIsSubmitting(false);
+}
+
   };
 
 

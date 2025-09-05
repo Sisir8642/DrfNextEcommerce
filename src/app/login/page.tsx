@@ -32,14 +32,21 @@ export default function LoginPage() {
     setIsSubmitting(true);
 
     try {
-      await login(username, password);
-      router.push('/admin');
-    } catch (error: any) {
-      setError(error.message || 'Error occurred !!');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  await login(username, password);
+  router.push('/admin');
+} catch (error: unknown) {
+  let message = 'Error occurred !!';
+  if (error instanceof Error) {
+    message = error.message;
+  } else if (typeof error === 'object' && error !== null && 'response' in error) {
+    // @ts-ignore
+    message = error.response?.data?.detail || message;
+  }
+  setError(message);
+} finally {
+  setIsSubmitting(false);
+}
+
 
   if (isLoading) {
     return (
@@ -112,4 +119,5 @@ export default function LoginPage() {
       </Card>
     </div>
   );
+}
 }

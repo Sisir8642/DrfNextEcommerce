@@ -7,8 +7,8 @@ import {
   SheetTitle,
   SheetDescription,
 } from '@/components/ui/sheet';
-import { useCart } from '../context/CartContext';
-import { Product } from '../../../interfaces/api';
+import { useCart } from '@/app/context/CartContext';
+import { Product } from '../../interfaces/api';
 import { useState } from 'react';
 import { FiHeart } from "react-icons/fi";
 interface Props {

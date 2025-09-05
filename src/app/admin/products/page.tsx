@@ -22,19 +22,22 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { AxiosError } from 'axios';
 
 
 const productSchema = z.object({
-    name: z.string().min(1, {message: "Name should be minimum of 3 charecter"}),
-    price: z.preprocess(
-      (val) => parseFloat(z.string().parse(val)),
-      z.number().positive({ message: "Price must be a positive number." })
-    ) as z.ZodType<number, any, any>,
-    description: z.string().optional(),
-    is_active: z.boolean(),
-    category: z.string().min(1, { message: "Category must be selected." }),
-
-})
+  name: z.string().min(3, { message: "Name should be minimum of 3 characters" }),
+  price: z.preprocess(
+    (val) => {
+      if (typeof val === 'string') return parseFloat(val);
+      return val;
+    },
+    z.number().positive({ message: "Price must be a positive number." })
+  ),
+  description: z.string().optional(),
+  is_active: z.boolean(),
+  category: z.string().min(1, { message: "Category must be selected." }),
+});
 
 type ProductFormData = z.infer<typeof productSchema>;
 
@@ -126,13 +129,13 @@ export default function ProductManagement(){
         });
         
       }
-      setIsDialogOpen(false);
-      form.reset(); 
-      fetchProducts(); 
-    } catch (error: any) {
-      console.error('Failed to save product:', error.response?.data || error.message);
-      toast('Error',{
-        
+       setIsDialogOpen(false);
+  form.reset();
+  fetchProducts();
+} catch (err) {
+  const error = err as AxiosError<{ detail?: string }>;
+  console.error('Failed to save product:', error.response?.data || error.message);
+  toast('Error', {
         description: `Failed to save product: ${error.response?.data?.detail || error.message}`,
         
       });
@@ -145,7 +148,7 @@ export default function ProductManagement(){
     form.reset({
       name: product.name,
       description: product.description || '',
-      price: product.price,
+      price: typeof product.price === 'number' ? product.price : Number(product.price),
       category: product.category,
       is_active: product.is_active,
     });
@@ -161,13 +164,13 @@ export default function ProductManagement(){
       });
       fetchProducts();
 
-    } catch (error: any) {
-      console.log('Failed to delete product:', error.response?.data || error.message);
-      toast('Error',{
-        description: `Failed to delete product: ${error.response?.data?.detail || error.message}`,
-        
-      });
-    }
+    } catch (err) {
+  const error = err as AxiosError<{ detail?: string }>;
+  console.error('Failed to delete product:', error.response?.data || error.message);
+  toast('Error', {
+    description: `Failed to delete product: ${error.response?.data?.detail || error.message}`,
+  });
+}
   };
 
     const handleOpenChange = (open: boolean) => {

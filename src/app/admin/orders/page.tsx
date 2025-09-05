@@ -62,19 +62,26 @@ export default function OrdersManagement() {
     );
 
     try {
+  await baseapi.patch(`/api/orders/orders/${orderId}/`, { status: newStatus });
+  toast('Success', {
+    description: `Order ${orderId} status updated to ${newStatus.charAt(0).toUpperCase() + newStatus.slice(1)}.`,
+  });
+} catch (error: unknown) {
+  let message = 'Unknown error';
+  if (error instanceof Error) {
+    message = error.message;
+  } else if (typeof error === 'object' && error !== null && 'response' in error) {
+   
+    message = error.response?.data?.detail || JSON.stringify(error);
+  }
 
-      await baseapi.patch(`/api/orders/orders/${orderId}/`, { status: newStatus });
-      toast('Success',{
-        description: `Order ${orderId} status updated to ${newStatus.charAt(0).toUpperCase() + newStatus.slice(1)}.`,
-      });
-    } catch (error: any) {
-      console.error('Failed to update order status:', error.response?.data || error.message);
-      toast('Error',{
-        description: `Failed to update order status: ${error.response?.data?.detail || error.message}`,
-      });
-      setOrders(originalOrders);
-    }
-  };
+  console.error('Failed to update order status:', message);
+  toast('Error', {
+    description: `Failed to update order status: ${message}`,
+  });
+  setOrders(originalOrders);
+}
+};
 
   const handleCancelOrder = async (orderId: number, currentStatus: Order['status']) => {
     if (currentStatus !== 'pending') {
@@ -94,16 +101,22 @@ export default function OrdersManagement() {
         
         description: `Order ${orderId} has been cancelled.`,
       });
-      
-      fetchOrders(); 
-    } catch (error: any) {
-      console.log('Failed to cancel order:', error.response?.data || error.message);
-      toast('Error',{
-        
-        description: `Failed to cancel order: ${error.response?.data?.detail || error.message}`,
-        
-      });
-    }
+      } catch (error: unknown) {
+  let message = 'Unknown error';
+
+  if (error instanceof Error) {
+    message = error.message;
+  } else if (typeof error === 'object' && error !== null && 'response' in error) {
+   
+    message = error.response?.data?.detail || JSON.stringify(error);
+  }
+
+  console.log('Failed to cancel order:', message);
+  toast('Error', {
+    description: `Failed to cancel order: ${message}`,
+  });
+}
+
   };
 
   if (loading) {

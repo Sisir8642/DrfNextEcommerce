@@ -3,7 +3,8 @@ import { Product } from '../../../interfaces/api';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction } from '@/components/ui/card';
 import { FaRegHeart } from 'react-icons/fa6';
 import { getImage } from '../ImagePath/page';
-import CartSheet from '@/app/AddToCart/page ';
+import CartSheet from '../AddToCart';
+import Image from 'next/image';
 
 interface Props {
   product: Product;
@@ -23,7 +24,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       </CardHeader>
 
       <CardContent>
-        <img
+        <Image
           src={getImage(product.name)}
           alt={product.name}
           className="w-full h-48 object-cover rounded"
