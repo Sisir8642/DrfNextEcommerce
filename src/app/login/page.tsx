@@ -38,15 +38,19 @@ export default function LoginPage() {
   let message = 'Error occurred !!';
   if (error instanceof Error) {
     message = error.message;
-  } else if (typeof error === 'object' && error !== null && 'response' in error) {
-    // @ts-ignore
-    message = error.response?.data?.detail || message;
+  } else if 
+  (typeof error === 'object' && error !== null && 
+    'response' in error){
+    // AxiosError shape
+    const axiosError = error as { response?: { status?: number; data?: any } };
+    message = axiosError.response?.data?.detail || message;
+    console.log('Error status:', axiosError.response?.status);
   }
   setError(message);
 } finally {
   setIsSubmitting(false);
 }
-
+  };
 
   if (isLoading) {
     return (
@@ -119,5 +123,4 @@ export default function LoginPage() {
       </Card>
     </div>
   );
-}
 }

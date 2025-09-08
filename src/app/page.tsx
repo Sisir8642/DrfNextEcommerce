@@ -119,7 +119,7 @@ const handleCardClick = () => {
     src="/Images/image.png" 
     alt="jeans" 
     width={400}  
-    height={400} 
+    height={250} 
     className="object-cover"
   />
 </CardContent>
@@ -142,7 +142,7 @@ const handleCardClick = () => {
     src="/Images/image2.png"
      alt="jeans"
      width={400}  
-    height={400} 
+    height={250} 
     className="object-cover"
      />
   </CardContent>
@@ -162,7 +162,9 @@ const handleCardClick = () => {
       <FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
-    <Image src="/Images/image copy.png" alt="jeans"/>
+    <Image src="/Images/image copy.png" alt="jeans"
+    width={400}  
+    height={250} />
   </CardContent>
   <CardFooter className=' flex flex-col items-start space-y-1'>
     <p className='text-yellow-300 text-2xl '>Rs.399</p>
@@ -178,7 +180,9 @@ const handleCardClick = () => {
     <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
-    <Image src="/Images/image.png" alt="jeans"/>
+    <Image src="/Images/image.png" alt="jeans"
+    width={400}  
+    height={250} />
   </CardContent>
   <CardFooter className=' flex flex-col items-start space-y-1'>
     <p className='text-yellow-300 text-2xl '>Rs.399</p>
@@ -195,7 +199,9 @@ const handleCardClick = () => {
     <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
-    <Image src="/Images/image copy 2.png" alt="jeans"/>
+    <Image src="/Images/image copy 2.png" alt="jeans"
+    width={400}  
+    height={250} />
   </CardContent>
   <CardFooter className=' flex flex-col items-start space-y-1'>
     <p className='text-yellow-300 text-2xl '>Rs.399</p>
@@ -213,7 +219,9 @@ const handleCardClick = () => {
     <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
-    <Image src="/Images/image copy 3.png" alt="jeans"/>
+    <Image src="/Images/image copy 3.png" alt="jeans"
+    width={400}  
+    height={250} />
   </CardContent>
   <CardFooter className=' flex flex-col items-start space-y-1'>
     <p className='text-yellow-300 text-2xl '>Rs.399</p>
@@ -230,7 +238,9 @@ const handleCardClick = () => {
     <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
-    <Image src="/Images/image copy 4.png" alt="jeans"/>
+    <Image src="/Images/image copy 4.png" alt="jeans"
+    width={400}  
+    height={250} />
   </CardContent>
   <CardFooter className=' flex flex-col items-start space-y-1'>
     <p className='text-yellow-300 text-2xl '>Rs.399</p>

@@ -28,6 +28,8 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           src={getImage(product.name)}
           alt={product.name}
           className="w-full h-48 object-cover rounded"
+          width={400}  
+    height={250} 
         />
       </CardContent>
 
