@@ -21,8 +21,6 @@ baseapi.interceptors.request.use(function(config){
 
 
 
-
-
 baseapi.interceptors.response.use(
     (response) => response,
     async(error) =>{
@@ -30,7 +28,8 @@ baseapi.interceptors.response.use(
     if (
         error.response.status === 401 && 
         !errorRequest._retry && 
-        errorRequest.url ! == `${"http://127.0.0.1:8000"}/api/token/refresh/`
+        errorRequest.url !== `${process.env.NEXT_PUBLIC_BASE_API}/api/token/refresh/`
+
         
     ){
         errorRequest._retry =true;
