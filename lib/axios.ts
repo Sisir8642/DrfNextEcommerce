@@ -5,7 +5,7 @@ import { tokenType } from "../interfaces/token";
 import { Product } from "../interfaces/api";
 
 const baseapi = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_BASE_API,
+    baseURL: process.env.NEXT_PUBLIC_BASE_API || "http://localhost:8000",
     withCredentials: true 
 })
 
@@ -18,8 +18,6 @@ baseapi.interceptors.request.use(function(config){
 }, function(error){
     console.log("accessToken in not imported and set in cookie")
 })
-
-
 
 baseapi.interceptors.response.use(
     (response) => response,
