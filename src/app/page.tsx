@@ -116,7 +116,7 @@ const handleCardClick = () => {
   </CardHeader>
   <CardContent>
   <Image 
-    src="/images/macbook.png" 
+    src="/images/image5.png" 
     alt="jeans" 
     width={400}  
     height={250} 
