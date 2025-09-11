@@ -7,7 +7,7 @@ export const getImage = (name: string) => {
     case 'rice':
       return '/images/rice.png';
     case 'hello':
-      return '/images/image_copy_2.png';
+      return '/images/image2.png';
     case 's21':
       return '/images/s21.png';
     default:
