@@ -110,13 +110,13 @@ const handleCardClick = () => {
    <Card className='hover:shadow-lg transition-all duration-300 transform hover:scale-105' 
    >
   <CardHeader>
-    <CardTitle>{"Men's Jeans"}</CardTitle>
+    <CardTitle>{"Laptop Pro"}</CardTitle>
     <CardDescription>Imported form the Germany.Made up cutton, with the plasure experience.</CardDescription>
     <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
   <Image 
-    src="/Images/image.png" 
+    src="/images/macbook.png" 
     alt="jeans" 
     width={400}  
     height={250} 
@@ -132,14 +132,14 @@ const handleCardClick = () => {
 </Card>
    <Card className='hover:shadow-lg transition-all duration-300 transform hover:scale-105'>
   <CardHeader>
-    <CardTitle>{"Men's Jeans"}</CardTitle>
+    <CardTitle>{"Bread"}</CardTitle>
 
     <CardDescription>Imported form the Germany.Made up cutton, with the plasure experience.</CardDescription>
     <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
     <Image 
-    src="/Images/image2.png"
+    src="/images/bread.png"
      alt="jeans"
      width={400}  
     height={250} 
@@ -162,7 +162,7 @@ const handleCardClick = () => {
       <FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
-    <Image src="/Images/image copy.png" alt="jeans"
+    <Image src="/images/image3.png" alt="jeans"
     width={400}  
     height={250} />
   </CardContent>
@@ -175,12 +175,51 @@ const handleCardClick = () => {
 </Card>
    <Card className='hover:shadow-lg transition-all duration-300 transform hover:scale-105'>
   <CardHeader>
-    <CardTitle> Jeans</CardTitle>
+    <CardTitle> Rice</CardTitle>
     <CardDescription>Imported form the Germany.Made up cutton, with the plasure experience.</CardDescription>
     <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
-    <Image src="/Images/image.png" alt="jeans"
+    <Image src="/images/rice.png" alt="rice"
+    width={400}  
+    height={250} />
+  </CardContent>
+  <CardFooter className=' flex flex-col items-start space-y-1'>
+    <p className='text-yellow-300 text-2xl '>Rs.399</p>
+    <p className='line-through m'>Rs.1300</p>
+    
+  </CardFooter>
+  
+</Card>
+   <Card className='hover:shadow-lg transition-all duration-300 transform hover:scale-105'>
+  <CardHeader>
+    <CardTitle>{"Shopping Cart"}</CardTitle>
+
+    <CardDescription>Imported form the Germany.Made up cutton, with the plasure experience.</CardDescription>
+    <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
+  </CardHeader>
+  <CardContent>
+    <Image src="/images/image.png" alt="cart"
+    width={400}  
+    height={250} />
+  </CardContent>
+  <CardFooter className=' flex flex-col items-start space-y-1'>
+    <p className='text-yellow-300 text-2xl '>Rs.399</p>
+    <p className='line-through m'>Rs.1300</p>
+    
+  </CardFooter>
+  
+</Card>
+   <Card className='hover:shadow-lg transition-all duration-300 transform hover:scale-105'>
+  <CardHeader>
+    <CardTitle>{"Men's Jeans"}</CardTitle>
+
+
+    <CardDescription>Imported form the Germany.Made up cutton, with the plasure experience.</CardDescription>
+    <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
+  </CardHeader>
+  <CardContent>
+    <Image src="/images/image4.png" alt="jeans"
     width={400}  
     height={250} />
   </CardContent>
@@ -199,46 +238,7 @@ const handleCardClick = () => {
     <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
   </CardHeader>
   <CardContent>
-    <Image src="/Images/image copy 2.png" alt="jeans"
-    width={400}  
-    height={250} />
-  </CardContent>
-  <CardFooter className=' flex flex-col items-start space-y-1'>
-    <p className='text-yellow-300 text-2xl '>Rs.399</p>
-    <p className='line-through m'>Rs.1300</p>
-    
-  </CardFooter>
-  
-</Card>
-   <Card className='hover:shadow-lg transition-all duration-300 transform hover:scale-105'>
-  <CardHeader>
-    <CardTitle>{"Men's Jeans"}</CardTitle>
-
-
-    <CardDescription>Imported form the Germany.Made up cutton, with the plasure experience.</CardDescription>
-    <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
-  </CardHeader>
-  <CardContent>
-    <Image src="/Images/image copy 3.png" alt="jeans"
-    width={400}  
-    height={250} />
-  </CardContent>
-  <CardFooter className=' flex flex-col items-start space-y-1'>
-    <p className='text-yellow-300 text-2xl '>Rs.399</p>
-    <p className='line-through m'>Rs.1300</p>
-    
-  </CardFooter>
-  
-</Card>
-   <Card className='hover:shadow-lg transition-all duration-300 transform hover:scale-105'>
-  <CardHeader>
-    <CardTitle>{"Men's Jeans"}</CardTitle>
-
-    <CardDescription>Imported form the Germany.Made up cutton, with the plasure experience.</CardDescription>
-    <CardAction><FaRegHeart className="text-red-500 text-2xl cursor-pointer" /></CardAction>
-  </CardHeader>
-  <CardContent>
-    <Image src="/Images/image copy 4.png" alt="jeans"
+    <Image src="/images/image5.png" alt="jeans"
     width={400}  
     height={250} />
   </CardContent>
